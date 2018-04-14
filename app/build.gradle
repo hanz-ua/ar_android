@@ -33,7 +33,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
-    compile 'io.reactivex.rxjava2:rxjava:2.1.1'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.8'
     compile 'com.annimon:stream:1.1.9'
     annotationProcessor "org.androidannotations:androidannotations:4.4.0"
     compile "org.androidannotations:androidannotations-api:4.4.0"
@@ -41,7 +41,18 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:4.5.0'
     compile 'com.android.support:support-v4:22.0.0'
 
-    compile 'com.danikula:videocache:1.0.1'
+    compile "com.squareup.retrofit2:retrofit:2.3.0"
+    compile "com.squareup.retrofit2:converter-gson:2.3.0"
+    compile "com.squareup.retrofit2:adapter-rxjava:2.1.0"
+    compile "com.squareup.okhttp3:logging-interceptor:3.9.1"
+    compile "com.google.guava:guava:18.0"
+    compile "com.squareup.okhttp3:okhttp:3.9.1"
+    compile "com.squareup.retrofit2:converter-scalars:2.2.0"
+    annotationProcessor "com.google.dagger:dagger-compiler:2.5"
+    compile "com.google.dagger:dagger:2.5"
+    provided "javax.annotation:jsr250-api:1.0"
+    compile "io.reactivex.rxjava2:rxandroid:2.0.1"
+
 }
 
 task deleteJar(type: Delete) {
