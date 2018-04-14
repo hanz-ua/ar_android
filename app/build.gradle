@@ -37,4 +37,22 @@ dependencies {
     compile 'com.annimon:stream:1.1.9'
     annotationProcessor "org.androidannotations:androidannotations:4.4.0"
     compile "org.androidannotations:androidannotations-api:4.4.0"
+
+    compile 'com.github.bumptech.glide:glide:4.5.0'
+    compile 'com.android.support:support-v4:22.0.0'
+
+    compile 'com.danikula:videocache:1.0.1'
 }
+
+task deleteJar(type: Delete) {
+    delete 'libs/hanz_media_v_1.0.1.jar'
+}
+
+task createJar(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('libs/jars/')
+    include('classes.jar')
+    rename('classes.jar', 'hanz_media_v_1.0.1.jar')
+}
+
+createJar.dependsOn(deleteJar, build)
