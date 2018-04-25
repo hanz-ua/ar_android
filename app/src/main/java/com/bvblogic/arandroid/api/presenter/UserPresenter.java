@@ -8,8 +8,6 @@ import com.bvblogic.arandroid.api.networking.error.NetworkError;
 import com.bvblogic.arandroid.api.presenter.core.Presenter;
 
 
-import rx.Subscription;
-import rx.subscriptions.CompositeSubscription;
 
 /**
  * Created by hanz on 14.04.2018.
@@ -23,22 +21,20 @@ public class UserPresenter extends Presenter<NetworkUser, User> {
 
     public void getUser(String user) {
         yBaseView.showWait();
-        Subscription subscription =
-                service.getUser(user, new Service.Callback<User>() {
-                    @Override
-                    public void onSucces(User user) {
-                        yBaseView.closeWait();
-                        yBaseView.onSuccess(user);
-                        onStop();
-                    }
+        subscription.add(service.getUser(user, new Service.Callback<User>() {
+            @Override
+            public void onSucces(User user) {
+                yBaseView.closeWait();
+                yBaseView.onSuccess(user);
+                onStop();
+            }
 
-                    @Override
-                    public void onError(NetworkError networkError) {
-                        yBaseView.closeWait();
-                        yBaseView.onFailure(networkError.getAppErrorMessage());
-                        onStop();
-                    }
-                });
-        super.subscription.add(subscription);
+            @Override
+            public void onError(NetworkError networkError) {
+                yBaseView.closeWait();
+               // yBaseView.onFailure(networkError.getAppErrorMessage());
+                onStop();
+            }
+        }));
     }
 }

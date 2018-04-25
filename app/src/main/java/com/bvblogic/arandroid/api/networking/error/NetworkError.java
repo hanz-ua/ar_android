@@ -1,5 +1,7 @@
 package com.bvblogic.arandroid.api.networking.error;
 
+import android.util.Log;
+
 import java.io.IOException;
 
 import retrofit2.HttpException;
@@ -25,6 +27,7 @@ public class NetworkError extends Throwable {
     public String getAppErrorMessage() {
         if (this.error instanceof IOException) return "not inet connect";
         if ((this.error instanceof HttpException)) return "Error";
+        Log.d("error", error.getMessage());
         return "base error";
     }
 

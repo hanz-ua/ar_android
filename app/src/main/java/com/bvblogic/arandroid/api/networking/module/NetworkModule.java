@@ -2,6 +2,7 @@ package com.bvblogic.arandroid.api.networking.module;
 
 import com.bvblogic.arandroid.api.networking.NetworkUser;
 import com.bvblogic.arandroid.api.service.User;
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -15,7 +16,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
@@ -68,8 +68,9 @@ public class NetworkModule {
                 .baseUrl(url)
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .addConverterFactory(ScalarsConverterFactory.create())
+                .addCallAdapterFactory(
+                        RxJava2CallAdapterFactory.create())
+               // .addConverterFactory(ScalarsConverterFactory.create())
                 .build();
     }
 

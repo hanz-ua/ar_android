@@ -7,7 +7,6 @@ import com.bvblogic.arandroid.R;
 import com.bvblogic.arandroid.activity.core.BaseActivity;
 import com.bvblogic.arandroid.fragment.core.BaseFragment;
 
-import io.reactivex.annotations.NonNull;
 
 /**
  * Created by hanz on 24.03.2018.

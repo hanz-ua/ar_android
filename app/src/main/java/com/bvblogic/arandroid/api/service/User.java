@@ -4,7 +4,7 @@ import com.bvblogic.arandroid.api.model.core.Head;
 
 import retrofit2.http.GET;
 import retrofit2.http.Query;
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Created by hanz on 14.04.2018.
