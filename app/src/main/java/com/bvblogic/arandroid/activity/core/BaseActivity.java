@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
 
 import com.annimon.stream.Stream;
 
@@ -15,7 +16,7 @@ import io.reactivex.functions.Consumer;
  */
 
 public abstract class BaseActivity
-        extends Activity
+        extends FragmentActivity
         implements ObservableActivity {
     private Observable<String> observable
             = Observable.just(ON_BACK_PRESSED);

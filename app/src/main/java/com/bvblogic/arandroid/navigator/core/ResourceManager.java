@@ -14,6 +14,7 @@ public class ResourceManager {
     public static final class FragmentId {
         //100-500
         public final static int FIRST_FRAGMENT = 100;
+        public final static int SECOND_FRAGMENT = 101;
     }
 
     public static final class ToolbarId {

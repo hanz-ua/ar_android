@@ -7,5 +7,6 @@ package com.bvblogic.arandroid.navigator.core;
 public class ResourceNames {
 
     public static final String FIRST_FRAGMENT = "FirstFragment";
+    public static final String SECOND_FRAGMENT = "SecondFragment";
 
 }

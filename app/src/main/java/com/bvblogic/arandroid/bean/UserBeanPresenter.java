@@ -23,6 +23,10 @@ public class UserBeanPresenter extends UserBean {
     @ViewById(R.id.text)
     TextView textView;
 
+    public TextView getTextView() {
+        return textView;
+    }
+
     @Override
     public void init() {
         super.init();

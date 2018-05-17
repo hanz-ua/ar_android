@@ -31,13 +31,19 @@ public class FirstFragment extends BaseFragment {
         super.backPressed();
     }
 
+    public void updateText(String s){
+        userBeanPresenter.getTextView().setText(s);
+    }
+
+    @Click(R.id.text)
+    public void clickToText() {
+        navigatorManager.getMainManager(null).moveFragmentTo(ResourceManager.FragmentId.SECOND_FRAGMENT, "fdsfdsfdsffdssdffdsdsffdsfds");
+    }
+
 
     @AfterViews
     public void initToolbar() {
-        navigatorManager.
-                getMainManager(this).
-                initToolbar(ResourceManager.ToolbarId.SIMPLE,
-                        R.string.app_name);
+        navigatorManager.getMainManager(this).initToolbar(ResourceManager.ToolbarId.SIMPLE, R.string.app_name);
     }
 
 }

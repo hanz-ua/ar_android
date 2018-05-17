@@ -1,8 +1,8 @@
 package com.bvblogic.arandroid.fragment.core;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
+import android.support.v4.app.Fragment;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 import android.widget.Toolbar;
